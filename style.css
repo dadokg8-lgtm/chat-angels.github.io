@@ -1,0 +1,429 @@
+/* ============================================
+   Основные настройки и сброс стилей
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   Фоновые элементы (небесные облака)
+   ============================================ */
+.cloud-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+    opacity: 0.7;
+}
+
+.cloud-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.cloud-2 {
+    width: 400px;
+    height: 400px;
+    bottom: 5%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.cloud-3 {
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 15%;
+    animation-delay: -10s;
+}
+
+.cloud-4 {
+    width: 350px;
+    height: 350px;
+    top: 15%;
+    right: 20%;
+    animation-delay: -15s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(20px);
+    }
+    50% {
+        transform: translateY(10px) translateX(-10px);
+    }
+    75% {
+        transform: translateY(-15px) translateX(-15px);
+    }
+}
+
+/* ============================================
+   Контейнер и карточка
+   ============================================ */
+.container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 30px;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 30px;
+    box-shadow: 
+        0 20px 60px rgba(140, 170, 200, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Заголовок и декоративные элементы
+   ============================================ */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4.2rem;
+    color: #5a7da7;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    text-shadow: 
+        3px 3px 6px rgba(90, 125, 167, 0.15),
+        0 0 20px rgba(255, 255, 255, 0.8);
+    position: relative;
+    display: inline-block;
+    animation: textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 
+            3px 3px 6px rgba(90, 125, 167, 0.15),
+            0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    to {
+        text-shadow: 
+            3px 3px 8px rgba(90, 125, 167, 0.25),
+            0 0 25px rgba(255, 255, 255, 0.9);
+    }
+}
+
+.title-decoration {
+    font-family: serif;
+    color: #ffccd5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.5rem;
+    opacity: 0.8;
+    animation: sparkle 2s infinite alternate;
+}
+
+.decoration-left {
+    left: -45px;
+}
+
+.decoration-right {
+    right: -45px;
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.6;
+        transform: translateY(-50%) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+/* ============================================
+   Подзаголовок
+   ============================================ */
+.subtitle {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #7a94b5;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    position: relative;
+    padding: 15px 0;
+}
+
+.subtitle::before,
+.subtitle::after {
+    content: "❧";
+    color: #d4e1f2;
+    margin: 0 15px;
+    font-size: 1.8rem;
+}
+
+/* ============================================
+   Кнопка Telegram
+   ============================================ */
+.telegram-button {
+    display: inline-block;
+    background: linear-gradient(145deg, #2aabee, #229ed9);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 22px 50px;
+    border-radius: 60px;
+    margin-top: 20px;
+    box-shadow: 
+        0 10px 25px rgba(42, 171, 238, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+.telegram-button:hover {
+    transform: translateY(-7px) scale(1.05);
+    box-shadow: 
+        0 15px 30px rgba(42, 171, 238, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: linear-gradient(145deg, #229ed9, #1e8bc4);
+    animation: none;
+}
+
+.telegram-button:active {
+    transform: translateY(-3px) scale(0.98);
+}
+
+.telegram-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.telegram-button:hover::before {
+    left: 100%;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 
+            0 10px 25px rgba(42, 171, 238, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 10px 30px rgba(42, 171, 238, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    animation: iconFloat 3s infinite ease-in-out;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+/* ============================================
+   Нижний текст (подпись)
+   ============================================ */
+.footer-note {
+    margin-top: 50px;
+    color: #a8b8ce;
+    font-size: 1.1rem;
+    font-style: italic;
+    border-top: 1px dashed #dce4f0;
+    padding-top: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    position: relative;
+}
+
+.footer-note::before {
+    content: "✨";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   Медиа-запросы для адаптивности
+   ============================================ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .title-decoration {
+        font-size: 2.5rem;
+        position: static;
+        display: block;
+        margin: 15px auto;
+        transform: none;
+    }
+    
+    .decoration-left {
+        content: "✧ ❖ ✧";
+    }
+    
+    .decoration-right {
+        display: none;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+        padding: 0 15px;
+    }
+    
+    .telegram-button {
+        font-size: 1.2rem;
+        padding: 20px 40px;
+    }
+    
+    .container {
+        padding: 30px 20px;
+    }
+    
+    .cloud {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .telegram-button {
+        font-size: 1.1rem;
+        padding: 18px 30px;
+    }
+    
+    .button-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ============================================
+   Дополнительные декоративные элементы
+   ============================================ */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    color: #ffccd5;
+    animation: heartFloat 15s infinite linear;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}

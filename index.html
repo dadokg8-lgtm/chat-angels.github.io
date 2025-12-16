@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хорошие добрые ангелочки 👼🏻</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cloud-bg">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+    </div>
+    
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <h1>
+            <span class="title-decoration decoration-left">❖</span>
+            Хорошие добрые ангелочки 👼🏻
+            <span class="title-decoration decoration-right">✧</span>
+        </h1>
+        
+        <p class="subtitle">Добро пожаловать в наше светлое и уютное сообщество, где царит доброта, поддержка и вдохновение</p>
+        
+        <a href="https://t.me/+w4gsC6S32nNkZDU6" target="_blank" class="telegram-button">
+            <div class="button-content">
+                <span class="icon">✉️</span>
+                <span>Присоединиться в Telegram</span>
+            </div>
+        </a>
+        
+        <p class="footer-note">
+            Нажмите на кнопку выше, чтобы перейти в наш телеграм-канал. Это простая ссылка, которая откроется прямо в приложении Telegram на вашем устройстве. Там вас уже ждут!
+        </p>
+    </div>
+    
+    <script>
+        // Добавляем плавающие сердечки
+        document.addEventListener('DOMContentLoaded', function() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❁';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.animationDuration = `${15 + Math.random() * 10}s`;
+                heart.style.fontSize = `${1 + Math.random() * 1.5}rem`;
+                heartsContainer.appendChild(heart);
+            }
+        });
+    </script>
+</body>
+</html>
